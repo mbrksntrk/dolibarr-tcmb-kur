@@ -1,0 +1,9 @@
+1.0.0 (2026-09-17)
+- Sıfırdan yazıldı (0.2.0: yalnız USD/EUR, sabit alış, tarihsiz).
+- Bültendeki tüm para birimleri (seçilebilir), kur türü seçimi (alış/satış/efektif/ortalama), birim (JPY=100) düzeltmesi.
+- Bülten tarihi → ertesi iş günü kaydı (VUK uygulaması, ayarla), TCMB arşivinden geçmişi doldurma, tatil/hafta sonu için son bültene düşme.
+- TRY dışı ana para birimi için çapraz kur (TRY dahil).
+- Çekirdek CurrencyRate sınıfı ile yazma, mükerrer koruması, eksik para birimini otomatik ekleme.
+- Ayar sayfası: güncel bülten tablosu, şimdi aktar, geçmişi doldur, çalışma günlüğü (llx_tcmbkur_log); ayar değişiklikleri güvenlik günlüğünde.
+- Günlük zamanlanmış görev (varsayılan açık), Dolibarr 24 AI modülü için tcmb_rates / tcmb_sync MCP araçları.
+- Modül numarası 194093 (rezerve), standart main.inc.php yükleme bloğu, tr_TR/en_US, GPL-3.0-or-later + atıf şartı.

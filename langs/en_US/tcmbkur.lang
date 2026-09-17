@@ -1,0 +1,60 @@
+# Copyright (C) 2026 M. Burak Şentürk <https://buraksenturk.net> - GPL-3.0-or-later with attribution terms (ATTRIBUTION.md)
+Module194093Name=TCMB Exchange Rates
+Module194093Desc=Imports the Central Bank of Türkiye daily bulletin into Dolibarr multicurrency rates
+TcmbKurSetup=TCMB Exchange Rates setup
+TcmbKurSetupDesc=Rates come from the TCMB indicative rates bulletin (today.xml / archive) and are written into Dolibarr's own rate table through core classes. The bulletin is published on business days around 15:30 (TR); schedule the cron job after 16:00.
+TcmbKurDailySync=TCMB daily rate update
+
+TcmbKurSectionScope=Scope
+TcmbKurSectionBehaviour=Behaviour
+
+TCMBKUR_CURRENCIES=Currencies
+TCMBKUR_CURRENCIESHelp=ISO codes, comma-separated (USD,EUR,GBP,CHF…). Codes missing from the bulletin are skipped and logged.
+TCMBKUR_RATE_TYPE=Rate type
+TCMBKUR_RATE_TYPEHelp=Turkish accounting normally uses Forex Buying (VUK 280). Average = (buying+selling)/2.
+TCMBKUR_APPLY_NEXT_BUSINESS_DAY=Store the rate on the next business day
+TCMBKUR_APPLY_NEXT_BUSINESS_DAYHelp=On: the bulletin dated D is stored with date D+1 (weekends skipped) — the bulletin applies to the next day's transactions. Off: stored with the bulletin date.
+TCMBKUR_CROSS_RATES=Cross rates (main currency other than TRY)
+TCMBKUR_CROSS_RATESHelp=When the company currency is EUR/USD etc., rates of the selected currencies and of TRY are derived from their TRY values in the bulletin.
+TCMBKUR_ADD_MISSING_CURRENCY=Auto-add missing currencies
+TCMBKUR_ADD_MISSING_CURRENCYHelp=Codes not yet defined in Dolibarr Multicurrency are created automatically.
+TCMBKUR_SKIP_EXISTING=Skip when a rate exists for the date
+TCMBKUR_SKIP_EXISTINGHelp=Off: a second rate row is added for the same day (Dolibarr uses the newest).
+TCMBKUR_BACKFILL_DAYS=Backfill — default days
+TCMBKUR_BACKFILL_DAYSHelp=Default for the "Backfill" button and the MCP tool.
+TCMBKUR_HOLIDAY_LOOKBACK=Holiday look-back (days)
+TCMBKUR_HOLIDAY_LOOKBACKHelp=When a date has no bulletin (holiday), walk back at most this many days.
+TCMBKUR_TIMEOUT=HTTP timeout (s)
+TCMBKUR_TIMEOUTHelp=Connect/response timeout for the TCMB server.
+TCMBKUR_LOG_KEEP_DAYS=Keep run log (days)
+TCMBKUR_LOG_KEEP_DAYSHelp=Run log entries older than this are purged. 0 = keep forever.
+
+TcmbKurTypeForexBuying=Forex Buying
+TcmbKurTypeForexSelling=Forex Selling
+TcmbKurTypeBanknoteBuying=Banknote Buying
+TcmbKurTypeBanknoteSelling=Banknote Selling
+TcmbKurTypeForexAverage=Buying/Selling Average
+
+TcmbKurActions=Actions
+TcmbKurSyncNow=Import latest bulletin now
+TcmbKurBackfillLabel=Last
+TcmbKurBackfill=Backfill
+TcmbKurCronHint=Daily import runs as a scheduled job; set its time after 16:00 (TR):
+TcmbKurSyncDone=TCMB rates imported
+TcmbKurSyncNothing=Nothing new (rates for this date already stored)
+TcmbKurSyncFailed=TCMB import failed
+TcmbKurBackfillDone=Bulletins of the last %s days processed
+
+TcmbKurLatestBulletin=Latest TCMB bulletin
+TcmbKurBulletinInfo=Bulletin date %s, no %s — stored in Dolibarr with date %s — rate used: %s. Currencies not selected are greyed out.
+TcmbKurUnit=Unit
+TcmbKurDolibarrRate=Dolibarr rate
+TcmbKurStored=Last stored in Dolibarr
+TcmbKurRunLog=Run log
+TcmbKurBulletin=Bulletin
+TcmbKurRateDate=Rate date
+TcmbKurWritten=Written
+TcmbKurSkipped=Skipped
+
+TcmbKurErrMulticurrencyOff=The Multicurrency module is disabled; this module cannot work without it.
+TcmbKurWarnMainCurrency=Company main currency is %s (not TRY). Rates are derived as cross rates; make sure "Cross rates" is enabled.

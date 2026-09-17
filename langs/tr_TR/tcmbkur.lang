@@ -1,0 +1,60 @@
+# Copyright (C) 2026 M. Burak Şentürk <https://buraksenturk.net> - GPL-3.0-or-later with attribution terms (ATTRIBUTION.md)
+Module194093Name=TCMB Döviz Kurları
+Module194093Desc=Merkez Bankası günlük bültenini Dolibarr çoklu para birimi kurlarına aktarır
+TcmbKurSetup=TCMB Döviz Kurları ayarları
+TcmbKurSetupDesc=Kurlar TCMB "Gösterge Niteliğindeki Kurlar" bülteninden (today.xml / arşiv) okunur ve Dolibarr'ın kendi kur tablosuna, çekirdek sınıflarla yazılır. Bülten iş günleri 15:30 civarı yayınlanır; zamanlanmış görevi 16:00 sonrasına ayarlayın.
+TcmbKurDailySync=TCMB günlük kur güncellemesi
+
+TcmbKurSectionScope=Kapsam
+TcmbKurSectionBehaviour=Davranış
+
+TCMBKUR_CURRENCIES=Para birimleri
+TCMBKUR_CURRENCIESHelp=ISO kodları, virgülle (USD,EUR,GBP,CHF…). Bültende olmayan kod atlanır ve günlükte görünür.
+TCMBKUR_RATE_TYPE=Kur türü
+TCMBKUR_RATE_TYPEHelp=Muhasebede genelde Döviz Alış kullanılır (VUK 280). Ortalama = (alış+satış)/2.
+TCMBKUR_APPLY_NEXT_BUSINESS_DAY=Kuru ertesi iş gününe yaz
+TCMBKUR_APPLY_NEXT_BUSINESS_DAYHelp=Açık: D tarihli bülten D+1 (hafta sonu atlanır) tarihiyle kaydedilir — bülten ertesi günün işlemlerinde kullanılır. Kapalı: bülten tarihiyle kaydedilir.
+TCMBKUR_CROSS_RATES=Çapraz kur (ana para birimi TRY değilse)
+TCMBKUR_CROSS_RATESHelp=Ana para birimi EUR/USD gibi TRY dışı ise seçilen para birimlerinin ve TRY'nin kuru bültendeki TRY karşılıklarından hesaplanır.
+TCMBKUR_ADD_MISSING_CURRENCY=Eksik para birimini otomatik ekle
+TCMBKUR_ADD_MISSING_CURRENCYHelp=Dolibarr Çoklu Para Birimi listesinde olmayan kod otomatik tanımlanır.
+TCMBKUR_SKIP_EXISTING=Aynı tarihte kur varsa yazma
+TCMBKUR_SKIP_EXISTINGHelp=Kapalıysa aynı güne ikinci bir kur satırı eklenir (Dolibarr en yeniyi kullanır).
+TCMBKUR_BACKFILL_DAYS=Geçmişi doldur — varsayılan gün
+TCMBKUR_BACKFILL_DAYSHelp="Geçmişi doldur" düğmesinin ve MCP aracının varsayılanı.
+TCMBKUR_HOLIDAY_LOOKBACK=Tatilde geriye bakılacak gün
+TCMBKUR_HOLIDAY_LOOKBACKHelp=Belirli bir tarihin bülteni yoksa (tatil) en fazla bu kadar gün geriye gidilir.
+TCMBKUR_TIMEOUT=HTTP zaman aşımı (sn)
+TCMBKUR_TIMEOUTHelp=TCMB sunucusu için bağlantı/yanıt süresi.
+TCMBKUR_LOG_KEEP_DAYS=Günlük saklama (gün)
+TCMBKUR_LOG_KEEP_DAYSHelp=Çalışma günlüğü kayıtları bu süreden sonra silinir. 0 = silme.
+
+TcmbKurTypeForexBuying=Döviz Alış
+TcmbKurTypeForexSelling=Döviz Satış
+TcmbKurTypeBanknoteBuying=Efektif Alış
+TcmbKurTypeBanknoteSelling=Efektif Satış
+TcmbKurTypeForexAverage=Alış-Satış Ortalaması
+
+TcmbKurActions=İşlemler
+TcmbKurSyncNow=Son bülteni şimdi aktar
+TcmbKurBackfillLabel=Son
+TcmbKurBackfill=Geçmişi doldur
+TcmbKurCronHint=Günlük otomatik aktarım zamanlanmış görevle yapılır; saatini 16:00 sonrasına ayarlayın:
+TcmbKurSyncDone=TCMB kurları aktarıldı
+TcmbKurSyncNothing=Yeni kur yok (bu tarih için zaten kayıtlı)
+TcmbKurSyncFailed=TCMB kur aktarımı başarısız
+TcmbKurBackfillDone=Son %s günün bültenleri işlendi
+
+TcmbKurLatestBulletin=Güncel TCMB bülteni
+TcmbKurBulletinInfo=Bülten tarihi %s, no %s — Dolibarr'a yazılacak tarih: %s — kullanılan kur: %s. Seçili olmayan para birimleri soluk gösterilir.
+TcmbKurUnit=Birim
+TcmbKurDolibarrRate=Dolibarr kuru
+TcmbKurStored=Dolibarr'daki son kayıt
+TcmbKurRunLog=Çalışma günlüğü
+TcmbKurBulletin=Bülten
+TcmbKurRateDate=Kur tarihi
+TcmbKurWritten=Yazılan
+TcmbKurSkipped=Atlanan
+
+TcmbKurErrMulticurrencyOff=Çoklu Para Birimi modülü kapalı; bu modül onsuz çalışamaz.
+TcmbKurWarnMainCurrency=Şirket ana para birimi %s (TRY değil). Kurlar çapraz hesaplanır; "Çapraz kur" ayarının açık olduğundan emin olun.
