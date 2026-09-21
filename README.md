@@ -1,4 +1,5 @@
 # TCMB Döviz Kurları — Dolibarr için Merkez Bankası kur modülü
+[![M8ven Score](https://m8ven.ai/badge/mcp/mbrksntrk/dolibarr-tcmb-kur)](https://m8ven.ai/mcp/mbrksntrk/dolibarr-tcmb-kur)
 
 Türkiye Cumhuriyet Merkez Bankası'nın günlük **Gösterge Niteliğindeki Kurlar** bültenini Dolibarr'ın Çoklu Para Birimi kur tablosuna aktarır. Çekirdek sınıflarla yazar (doğrudan SQL yok), çekirdeğe müdahale yok.
 
